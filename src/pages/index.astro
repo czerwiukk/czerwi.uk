@@ -1,18 +1,53 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import hoodedPingu from "../assets/hooded_pingu.png";
+import { Image } from "astro:assets";
+
+const age = new Date().getFullYear() - 1999;
 ---
 
 <Layout title="czerwiukk">
-  <main class="mx-auto max-w-xl space-y-2 p-4">
-    <h1
-      class="mx-auto w-fit bg-yellow-400 text-3xl font-semibold dark:bg-yellow-500"
-    >
-      czerwiukk
-    </h1>
+  <main class="mx-auto max-w-2xl space-y-4 p-4 text-sm text-ctp-subtext0">
+    <div class="flex w-full justify-between">
+      <section class="space-y-1">
+        <h1 class="text-3xl text-ctp-rosewater">czerwiukk</h1>
 
-    <p class="w-fit bg-green-400 text-lg dark:bg-green-500">
-      Hi! Somehow you found my page. That's nice.<br />
-      You're actually the first person to see it.<br />
+        <ol>
+          <li>{age}</li>
+          <li>code removal conneisseur 🏌️</li>
+          <li>software engineer <br class="sm:hidden" /> @ Software Mansion</li>
+          <li>based in Kraków 🇵🇱</li>
+          <li class="mt-2">
+            that's my <a
+              class="text-ctp-yellow hover:underline"
+              target="_blank"
+              referrerpolicy="no-referrer"
+              href="https://github.com/czerwiukk">github</a
+            >
+          </li>
+          <li>
+            u can also see my <a
+              class="text-ctp-peach hover:underline"
+              target="_blank"
+              referrerpolicy="no-referrer"
+              href="https://instagram.com/czerwiukk"
+            >
+              instagram</a
+            >
+          </li>
+        </ol>
+      </section>
+
+      <Image
+        src={hoodedPingu}
+        alt="Hooded Pingu"
+        class="h-24 w-24 rounded-md md:h-48 md:w-48"
+      />
+    </div>
+
+    <p class="text-right text-xs">
+      Let's clarify, as of now, I am not using linux. <br />
+      The penguin resembles me at work just too well...
     </p>
   </main>
 </Layout>
