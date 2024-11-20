@@ -1,0 +1,52 @@
+---
+import { Image } from "astro:assets";
+import hoodedPingu from "../assets/hooded_pingu.png";
+---
+
+<div class="flex w-full justify-between">
+  <section class="flex w-full flex-col justify-between gap-2">
+    <div class="flex w-full justify-between">
+      <h1 class="text-4xl text-ctp-rosewater">czerwiukk</h1>
+
+      <Image
+        src={hoodedPingu}
+        alt="Hooded Pingu"
+        class="h-16 w-16 rounded-md sm:hidden"
+      />
+    </div>
+
+    <ol>
+      <li>code removal conneisseur <span class="text-4xl">🏌</span></li>
+      <li>software engineer @ Software Mansion</li>
+      <li>based in Kraków 🇵🇱</li>
+      <li class="mt-2">
+        that's my{" "}
+        <a
+          class="text-ctp-yellow hover:underline"
+          target="_blank"
+          referrerpolicy="no-referrer"
+          href="https://github.com/czerwiukk"
+        >
+          github
+        </a>
+      </li>
+      <li>
+        u can also see my{" "}
+        <a
+          class="text-ctp-peach hover:underline"
+          target="_blank"
+          referrerpolicy="no-referrer"
+          href="https://instagram.com/czerwiukk"
+        >
+          instagram
+        </a>
+      </li>
+    </ol>
+  </section>
+
+  <Image
+    src={hoodedPingu}
+    alt="Hooded Pingu"
+    class="hidden h-48 w-48 self-end rounded-md sm:block"
+  />
+</div>

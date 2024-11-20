@@ -1,69 +1,13 @@
 ---
+import Header from "../components/Header.astro";
+import WorkExperience from "../components/WorkExperience.astro";
 import Layout from "../layouts/Layout.astro";
-import hoodedPingu from "../assets/hooded_pingu.png";
-import { Image } from "astro:assets";
-
-const ageInMiliseconds =
-  new Date().getTime() - new Date(1999, 1, 13, 7, 10).getTime();
-const ageInSeconds = Math.floor(ageInMiliseconds / 1000);
 ---
 
 <Layout title="czerwiukk">
-  <main class="mx-auto max-w-2xl space-y-4 p-8 text-sm text-ctp-subtext0">
-    <div class="flex w-full justify-between">
-      <section class="flex flex-col justify-between gap-2">
-        <h1 class="text-3xl text-ctp-rosewater">czerwiukk</h1>
+  <main class="mx-auto max-w-2xl space-y-8 p-8 text-ctp-subtext0">
+    <Header />
 
-        <ol>
-          <li><span id="age">{ageInSeconds}</span> seconds old</li>
-          <li>code removal conneisseur 🏌️</li>
-          <li>software engineer <br class="sm:hidden" /> @ Software Mansion</li>
-          <li>based in Kraków 🇵🇱</li>
-          <li class="mt-2">
-            that's my{" "}
-            <a
-              class="text-ctp-yellow hover:underline"
-              target="_blank"
-              referrerpolicy="no-referrer"
-              href="https://github.com/czerwiukk"
-            >
-              github
-            </a>
-          </li>
-          <li>
-            u can also see my{" "}
-            <a
-              class="text-ctp-peach hover:underline"
-              target="_blank"
-              referrerpolicy="no-referrer"
-              href="https://instagram.com/czerwiukk"
-            >
-              instagram
-            </a>
-          </li>
-        </ol>
-      </section>
-
-      <Image
-        src={hoodedPingu}
-        alt="Hooded Pingu"
-        class="h-32 w-32 self-end rounded-md md:h-48 md:w-48"
-      />
-    </div>
-
-    <p class="text-right text-xs">
-      Let's clarify, as of now, I am not using Linux. <br />
-      The penguin resembles me at work just too well...
-    </p>
+    <WorkExperience />
   </main>
 </Layout>
-
-<script is:inline lang="ts">
-  const ageSpan = document.getElementById("age");
-  let ageInSeconds = Number(ageSpan.textContent);
-
-  setInterval(() => {
-    ageInSeconds++;
-    ageSpan.textContent = `${ageInSeconds}`;
-  }, 1000);
-</script>
