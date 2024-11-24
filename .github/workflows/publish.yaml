@@ -1,0 +1,36 @@
+name: Publish on GH Pages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  publish-page:
+    name: publish-page
+    environment: main
+    runs-on: ubuntu-latest 
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+
+      - run: bun install
+      - run: bun run build
+
+      - name: Deploy to GitHub Pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_PAGES_REPO_TOKEN }}
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+          git clone --depth=1 https://x-access-token:${GITHUB_TOKEN}@github.com/czerwiukk/czerwiukk.github.io.git gh-pages
+          cd gh-pages
+
+          # Copy build files to the gh-pages repository
+          rm -rf *  # Remove old files
+          cp -R ../dist/* .  # Copy new build files
+
+          git add .
+          git commit -m "Deployment: $GITHUB_SHA"
+          git push
