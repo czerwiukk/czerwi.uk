@@ -9,7 +9,7 @@ jobs:
   publish-page:
     name: publish-page
     environment: main
-    runs-on: ubuntu-latest 
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: oven-sh/setup-bun@v2
