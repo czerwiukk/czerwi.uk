@@ -1,4 +1,6 @@
 ---
+import "../theme.css";
+
 interface Props {
   title: string;
 }
@@ -7,14 +9,14 @@ const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" class="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content="welcome to my page" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
 
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -24,9 +26,8 @@ const { title } = Astro.props;
 
     <title>{title}</title>
   </head>
-  <body
-    class="albert-sans-font ctp-latte bg-ctp-base text-ctp-text dark:ctp-mocha"
-  >
+
+  <body class="albert-sans-font bg-bg text-fg">
     <slot />
   </body>
 </html>
@@ -35,7 +36,6 @@ const { title } = Astro.props;
   .albert-sans-font {
     font-family: "Albert Sans", sans-serif;
     font-optical-sizing: auto;
-    font-weight: <weight>;
     font-style: normal;
   }
 </style>
