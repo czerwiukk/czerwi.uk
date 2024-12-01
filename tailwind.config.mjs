@@ -3,6 +3,11 @@ export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   darkMode: "class",
   theme: {
+    extend: {
+      screens: {
+        xs: "480px",
+      },
+    },
     colors: {
       bg_h: "var(--bg_h)",
       bg: "var(--bg)",
